@@ -1,0 +1,6 @@
+#!/bin/sh
+
+url="$(xclip -o)"
+urls="/home/Aboud/.config/newsboat/urls"
+
+echo "$url" >> "$urls"

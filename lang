@@ -1,0 +1,14 @@
+#!/bin/sh
+
+    options="ENG\nARABIC\nDeutch\nCancel"
+    selected=$(echo -e  $options | dmenu )
+    if [ $selected = "ENG" ]; then
+        setxkbmap us
+    elif [ $selected = "ARABIC" ]; then
+        setxkbmap ara
+    elif [ $selected = "Deutch" ]; then
+        setxkbmap de
+    elif [ $selected = "Cancel" ]; then
+        return
+    fi
+

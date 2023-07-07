@@ -1,0 +1,12 @@
+#!/bin/sh
+
+filename=$(ls -r ~/Dropbox/Dropbox/notes/src/*.md | head -n1)
+target="$(dirname "${filename}")/../pdf"
+outputFile="$(basename "$filename" .md).pdf"
+
+mkdir -p $target
+
+pandoc \
+    --pdf-engine=xelatex \
+    --variable mainfont="DejaVu Serif" \
+    -o "$target/$outputFile" $filename &
